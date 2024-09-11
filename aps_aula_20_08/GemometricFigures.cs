@@ -134,9 +134,15 @@ namespace aps_aula_20_08
             switch(cmbForma.Text)
             {
                 case "Quadrado":
-                    FormaGeometrica objeto = new Quadrado() { Lado = Convert.ToDouble(tbLado.Text) };
-                    cmbObjetos.Items.Add(objeto);
-                    tbLado.Clear();
+                    if (tbLado.Text != "")
+                    {
+                        FormaGeometrica objeto = new Quadrado() { Lado = Convert.ToDouble(tbLado.Text) };
+                        cmbObjetos.Items.Add(objeto);
+                        tbLado.Clear();
+                    }
+                    break;
+                case "Retangulo":
+
                     break;
                 default:
                     break;
