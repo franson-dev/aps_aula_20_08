@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace aps_aula_20_08
 {
-    public partial class Form1 : Form
+    public partial class Figures : Form
     {
-        public Form1()
+        public Figures()
         {
             InitializeComponent();
         }
@@ -127,6 +127,11 @@ namespace aps_aula_20_08
         }
 
         private void cmbTriangulo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
