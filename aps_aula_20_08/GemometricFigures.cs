@@ -15,6 +15,15 @@ namespace aps_aula_20_08
         public Figures()
         {
             InitializeComponent();
+
+            ExibirRaio(false);
+            ExibirBase(false);
+            ExibirLado(false);
+            ExibirAltura(false);
+            ExibirTriangulo(false);
+            ExibirArea(false);
+            ExibirPerimetro(false);
+            ExibirCriar(false);
         }
 
         private void lblRaio_Click(object sender, EventArgs e)
@@ -29,34 +38,48 @@ namespace aps_aula_20_08
 
         private void cmbForma_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch(cmbForma.Text)
+            
+
+            switch (cmbForma.Text)
             {
                 case "Circunferência":
                     ExibirRaio(true);
+                    ExibirArea(true);
+                    ExibirPerimetro(true);
+                    ExibirCriar(true);
+                    ExibirBase(false);
                     ExibirLado(false);
                     ExibirAltura(false);
-                    ExibirBase(false);
                     ExibirTriangulo(false);
                     break;
                 case "Triângulo":
-                    ExibirRaio(false);
                     ExibirBase(true);
-                    ExibirLado(false);
                     ExibirAltura(true);
                     ExibirTriangulo(true);
+                    ExibirArea(true);
+                    ExibirPerimetro(true);
+                    ExibirCriar(true);
+                    ExibirLado(false);
+                    ExibirRaio(false);
                     break;
                 case "Retângulo":
                     ExibirBase(true);
-                    ExibirRaio(false);
                     ExibirAltura(true);
+                    ExibirArea(true);
+                    ExibirPerimetro(true);
+                    ExibirCriar(true);
                     ExibirLado(false);
+                    ExibirRaio(false);
                     ExibirTriangulo(false);
                     break;
                 case "Quadrado":
-                    ExibirBase(false);
-                    ExibirRaio(false);
-                    ExibirAltura(false);
                     ExibirLado(true);
+                    ExibirArea(true);
+                    ExibirPerimetro(true);
+                    ExibirCriar(true);
+                    ExibirRaio(false);
+                    ExibirBase(false);
+                    ExibirAltura(false);
                     ExibirTriangulo(false);
                     break;
                 default:
@@ -65,10 +88,24 @@ namespace aps_aula_20_08
            
         }
 
+        private void ExibirCriar(bool visivel)
+        {
+            cmbObjetos.Visible = btnCriar.Visible = visivel;
+        }
+
+        private void ExibirPerimetro(bool visivel)
+        {
+            lblPerimetro.Visible = tbPerimetro.Visible = visivel;
+        }
+
+        private void ExibirArea(bool visivel)
+        {
+            lblArea.Visible = tbArea.Visible = visivel;
+        }
+
         private void ExibirTriangulo(bool visivel)
         {
             cmbTriangulo.Visible = lblTriangulo.Visible = visivel;
-
         }
 
         private void ExibirBase(bool visivel)
