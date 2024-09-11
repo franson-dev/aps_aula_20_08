@@ -54,27 +54,39 @@ namespace aps_aula_20_08
             // lblForma
             // 
             this.lblForma.AutoSize = true;
-            this.lblForma.Location = new System.Drawing.Point(28, 27);
+            this.lblForma.BackColor = System.Drawing.Color.Transparent;
+            this.lblForma.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblForma.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblForma.Location = new System.Drawing.Point(15, 24);
+            this.lblForma.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblForma.Name = "lblForma";
-            this.lblForma.Size = new System.Drawing.Size(55, 20);
+            this.lblForma.Size = new System.Drawing.Size(68, 22);
             this.lblForma.TabIndex = 0;
             this.lblForma.Text = "Forma";
             // 
             // lblTriangulo
             // 
             this.lblTriangulo.AutoSize = true;
-            this.lblTriangulo.Location = new System.Drawing.Point(262, 32);
+            this.lblTriangulo.BackColor = System.Drawing.Color.Transparent;
+            this.lblTriangulo.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTriangulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTriangulo.Location = new System.Drawing.Point(297, 24);
+            this.lblTriangulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTriangulo.Name = "lblTriangulo";
-            this.lblTriangulo.Size = new System.Drawing.Size(74, 20);
+            this.lblTriangulo.Size = new System.Drawing.Size(99, 22);
             this.lblTriangulo.TabIndex = 1;
             this.lblTriangulo.Text = "Triângulo";
             // 
             // lblRaio
             // 
             this.lblRaio.AutoSize = true;
-            this.lblRaio.Location = new System.Drawing.Point(28, 168);
+            this.lblRaio.BackColor = System.Drawing.Color.Transparent;
+            this.lblRaio.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRaio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblRaio.Location = new System.Drawing.Point(31, 173);
+            this.lblRaio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRaio.Name = "lblRaio";
-            this.lblRaio.Size = new System.Drawing.Size(42, 20);
+            this.lblRaio.Size = new System.Drawing.Size(52, 22);
             this.lblRaio.TabIndex = 2;
             this.lblRaio.Text = "Raio";
             this.lblRaio.Click += new System.EventHandler(this.lblRaio_Click);
@@ -82,18 +94,26 @@ namespace aps_aula_20_08
             // lblLado
             // 
             this.lblLado.AutoSize = true;
-            this.lblLado.Location = new System.Drawing.Point(28, 202);
+            this.lblLado.BackColor = System.Drawing.Color.Transparent;
+            this.lblLado.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblLado.Location = new System.Drawing.Point(27, 206);
+            this.lblLado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLado.Name = "lblLado";
-            this.lblLado.Size = new System.Drawing.Size(45, 20);
+            this.lblLado.Size = new System.Drawing.Size(56, 22);
             this.lblLado.TabIndex = 3;
             this.lblLado.Text = "Lado";
             // 
             // lblAltura
             // 
             this.lblAltura.AutoSize = true;
-            this.lblAltura.Location = new System.Drawing.Point(28, 237);
+            this.lblAltura.BackColor = System.Drawing.Color.Transparent;
+            this.lblAltura.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltura.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblAltura.Location = new System.Drawing.Point(27, 239);
+            this.lblAltura.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAltura.Name = "lblAltura";
-            this.lblAltura.Size = new System.Drawing.Size(51, 20);
+            this.lblAltura.Size = new System.Drawing.Size(69, 22);
             this.lblAltura.TabIndex = 4;
             this.lblAltura.Text = "Altura";
             this.lblAltura.Click += new System.EventHandler(this.lblAltura_Click);
@@ -101,9 +121,13 @@ namespace aps_aula_20_08
             // lblBase
             // 
             this.lblBase.AutoSize = true;
-            this.lblBase.Location = new System.Drawing.Point(28, 273);
+            this.lblBase.BackColor = System.Drawing.Color.Transparent;
+            this.lblBase.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBase.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblBase.Location = new System.Drawing.Point(31, 272);
+            this.lblBase.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBase.Name = "lblBase";
-            this.lblBase.Size = new System.Drawing.Size(46, 20);
+            this.lblBase.Size = new System.Drawing.Size(52, 22);
             this.lblBase.TabIndex = 5;
             this.lblBase.Text = "Base";
             this.lblBase.Click += new System.EventHandler(this.lblBase_Click);
@@ -111,117 +135,149 @@ namespace aps_aula_20_08
             // tbRaio
             // 
             this.tbRaio.BackColor = System.Drawing.Color.White;
-            this.tbRaio.Location = new System.Drawing.Point(85, 162);
+            this.tbRaio.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbRaio.Location = new System.Drawing.Point(87, 170);
+            this.tbRaio.Margin = new System.Windows.Forms.Padding(2);
             this.tbRaio.Name = "tbRaio";
-            this.tbRaio.Size = new System.Drawing.Size(189, 26);
+            this.tbRaio.Size = new System.Drawing.Size(148, 29);
             this.tbRaio.TabIndex = 6;
             // 
             // tbLado
             // 
             this.tbLado.BackColor = System.Drawing.Color.White;
-            this.tbLado.Location = new System.Drawing.Point(85, 196);
+            this.tbLado.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbLado.Location = new System.Drawing.Point(91, 203);
+            this.tbLado.Margin = new System.Windows.Forms.Padding(2);
             this.tbLado.Name = "tbLado";
-            this.tbLado.Size = new System.Drawing.Size(189, 26);
+            this.tbLado.Size = new System.Drawing.Size(148, 29);
             this.tbLado.TabIndex = 7;
             // 
             // tbAltura
             // 
             this.tbAltura.BackColor = System.Drawing.Color.White;
-            this.tbAltura.Location = new System.Drawing.Point(85, 231);
+            this.tbAltura.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAltura.Location = new System.Drawing.Point(100, 236);
+            this.tbAltura.Margin = new System.Windows.Forms.Padding(2);
             this.tbAltura.Name = "tbAltura";
-            this.tbAltura.Size = new System.Drawing.Size(189, 26);
+            this.tbAltura.Size = new System.Drawing.Size(148, 29);
             this.tbAltura.TabIndex = 8;
             this.tbAltura.TextChanged += new System.EventHandler(this.tbAltura_TextChanged);
             // 
             // tbBase
             // 
             this.tbBase.BackColor = System.Drawing.Color.White;
-            this.tbBase.Location = new System.Drawing.Point(85, 270);
+            this.tbBase.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBase.Location = new System.Drawing.Point(87, 269);
+            this.tbBase.Margin = new System.Windows.Forms.Padding(2);
             this.tbBase.Name = "tbBase";
-            this.tbBase.Size = new System.Drawing.Size(189, 26);
+            this.tbBase.Size = new System.Drawing.Size(148, 29);
             this.tbBase.TabIndex = 9;
             // 
             // tbPerimetro
             // 
             this.tbPerimetro.BackColor = System.Drawing.Color.White;
-            this.tbPerimetro.Location = new System.Drawing.Point(387, 196);
+            this.tbPerimetro.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPerimetro.Location = new System.Drawing.Point(400, 269);
+            this.tbPerimetro.Margin = new System.Windows.Forms.Padding(2);
             this.tbPerimetro.Name = "tbPerimetro";
             this.tbPerimetro.ReadOnly = true;
-            this.tbPerimetro.Size = new System.Drawing.Size(189, 26);
+            this.tbPerimetro.Size = new System.Drawing.Size(148, 29);
             this.tbPerimetro.TabIndex = 13;
             // 
             // tbArea
             // 
             this.tbArea.BackColor = System.Drawing.Color.White;
-            this.tbArea.Location = new System.Drawing.Point(387, 157);
+            this.tbArea.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbArea.Location = new System.Drawing.Point(373, 236);
+            this.tbArea.Margin = new System.Windows.Forms.Padding(2);
             this.tbArea.Name = "tbArea";
             this.tbArea.ReadOnly = true;
-            this.tbArea.Size = new System.Drawing.Size(189, 26);
+            this.tbArea.Size = new System.Drawing.Size(148, 29);
             this.tbArea.TabIndex = 12;
             this.tbArea.TextChanged += new System.EventHandler(this.tbArea_TextChanged);
             // 
             // lblPerimetro
             // 
             this.lblPerimetro.AutoSize = true;
-            this.lblPerimetro.Location = new System.Drawing.Point(304, 199);
+            this.lblPerimetro.BackColor = System.Drawing.Color.Transparent;
+            this.lblPerimetro.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPerimetro.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblPerimetro.Location = new System.Drawing.Point(296, 272);
+            this.lblPerimetro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPerimetro.Name = "lblPerimetro";
-            this.lblPerimetro.Size = new System.Drawing.Size(77, 20);
+            this.lblPerimetro.Size = new System.Drawing.Size(100, 22);
             this.lblPerimetro.TabIndex = 11;
             this.lblPerimetro.Text = "Perimetro";
             // 
             // lblArea
             // 
             this.lblArea.AutoSize = true;
-            this.lblArea.Location = new System.Drawing.Point(338, 160);
+            this.lblArea.BackColor = System.Drawing.Color.Transparent;
+            this.lblArea.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArea.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblArea.Location = new System.Drawing.Point(316, 239);
+            this.lblArea.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblArea.Name = "lblArea";
-            this.lblArea.Size = new System.Drawing.Size(43, 20);
+            this.lblArea.Size = new System.Drawing.Size(53, 22);
             this.lblArea.TabIndex = 10;
             this.lblArea.Text = "Area";
             // 
             // cmbForma
             // 
+            this.cmbForma.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbForma.FormattingEnabled = true;
             this.cmbForma.Items.AddRange(new object[] {
             "Quadrado",
             "Circunferência",
             "Retângulo",
             "Triângulo"});
-            this.cmbForma.Location = new System.Drawing.Point(85, 24);
+            this.cmbForma.Location = new System.Drawing.Point(87, 21);
+            this.cmbForma.Margin = new System.Windows.Forms.Padding(2);
             this.cmbForma.Name = "cmbForma";
-            this.cmbForma.Size = new System.Drawing.Size(121, 28);
+            this.cmbForma.Size = new System.Drawing.Size(125, 30);
             this.cmbForma.TabIndex = 14;
             this.cmbForma.SelectedIndexChanged += new System.EventHandler(this.cmbForma_SelectedIndexChanged);
             // 
             // cmbTriangulo
             // 
+            this.cmbTriangulo.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTriangulo.FormattingEnabled = true;
             this.cmbTriangulo.Items.AddRange(new object[] {
             "Isósceles",
             "Escaleno",
             "Reto"});
-            this.cmbTriangulo.Location = new System.Drawing.Point(342, 29);
+            this.cmbTriangulo.Location = new System.Drawing.Point(400, 21);
+            this.cmbTriangulo.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTriangulo.Name = "cmbTriangulo";
-            this.cmbTriangulo.Size = new System.Drawing.Size(121, 28);
+            this.cmbTriangulo.Size = new System.Drawing.Size(95, 30);
             this.cmbTriangulo.TabIndex = 15;
             this.cmbTriangulo.SelectedIndexChanged += new System.EventHandler(this.cmbTriangulo_SelectedIndexChanged);
             // 
             // cmbObjetos
             // 
+            this.cmbObjetos.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbObjetos.FormattingEnabled = true;
-            this.cmbObjetos.Location = new System.Drawing.Point(598, 29);
+            this.cmbObjetos.Location = new System.Drawing.Point(410, 173);
+            this.cmbObjetos.Margin = new System.Windows.Forms.Padding(2);
             this.cmbObjetos.Name = "cmbObjetos";
-            this.cmbObjetos.Size = new System.Drawing.Size(121, 28);
+            this.cmbObjetos.Size = new System.Drawing.Size(95, 30);
             this.cmbObjetos.TabIndex = 16;
             this.cmbObjetos.SelectedIndexChanged += new System.EventHandler(this.cmbObjetos_SelectedIndexChanged);
             // 
             // btnCriar
             // 
-            this.btnCriar.Location = new System.Drawing.Point(517, 29);
+            this.btnCriar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCriar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCriar.FlatAppearance.BorderSize = 0;
+            this.btnCriar.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCriar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCriar.Location = new System.Drawing.Point(425, 128);
+            this.btnCriar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCriar.Name = "btnCriar";
-            this.btnCriar.Size = new System.Drawing.Size(75, 28);
+            this.btnCriar.Size = new System.Drawing.Size(70, 41);
             this.btnCriar.TabIndex = 17;
             this.btnCriar.Text = "Criar";
-            this.btnCriar.UseVisualStyleBackColor = true;
+            this.btnCriar.UseVisualStyleBackColor = false;
             this.btnCriar.Click += new System.EventHandler(this.btnCriar_Click);
             // 
             // contextMenuStrip1
@@ -232,10 +288,10 @@ namespace aps_aula_20_08
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.DimGray;
+            this.ClientSize = new System.Drawing.Size(622, 314);
             this.Controls.Add(this.btnCriar);
             this.Controls.Add(this.cmbObjetos);
             this.Controls.Add(this.cmbTriangulo);
@@ -254,6 +310,8 @@ namespace aps_aula_20_08
             this.Controls.Add(this.lblRaio);
             this.Controls.Add(this.lblTriangulo);
             this.Controls.Add(this.lblForma);
+            this.Font = new System.Drawing.Font("Modern No. 20", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
