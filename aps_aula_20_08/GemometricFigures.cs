@@ -42,7 +42,7 @@ namespace aps_aula_20_08
 
             switch (cmbForma.Text)
             {
-                case "Circunferência":
+                case "Circulo":
                     ExibirRaio(true);
                     ExibirArea(true);
                     ExibirPerimetro(true);
@@ -136,14 +136,36 @@ namespace aps_aula_20_08
                 case "Quadrado":
                     if (tbLado.Text != "")
                     {
-                        FormaGeometrica objeto = new Quadrado() { Lado = Convert.ToDouble(tbLado.Text) };
-                        cmbObjetos.Items.Add(objeto);
+                        FormaGeometrica quadrado = new Quadrado() { Lado = Convert.ToDouble(tbLado.Text) };
+                        cmbObjetos.Items.Add(quadrado);
                         tbLado.Clear();
+                        tbArea.Text = quadrado.CalcularArea().ToString();
+                        tbPerimetro.Text = quadrado.CalcularPerimetro().ToString();
                     }
                     break;
-                case "Retangulo":
-
+                case "Retângulo":
+                    if (tbAltura.Text != "" && tbBase.Text != "")
+                    {
+                        FormaGeometrica retangulo = new Retangulo(Convert.ToDouble(tbBase.Text),Convert.ToDouble(tbAltura.Text));
+                        cmbObjetos.Items.Add(retangulo);
+                        tbBase.Clear();
+                        tbAltura.Clear();
+                        tbArea.Text = retangulo.CalcularArea().ToString();
+                        tbPerimetro.Text = retangulo.CalcularPerimetro().ToString();
+                    }
                     break;
+                case "Circulo":
+                    if (tbRaio.Text != "")
+                    {
+                        FormaGeometrica circulo = new Circulo() { Raio = Convert.ToDouble(tbRaio.Text)};
+                        cmbObjetos.Items.Add(circulo);
+                        tbRaio.Clear();
+                        tbArea.Text = circulo.CalcularArea().ToString();
+                        tbPerimetro.Text = circulo.CalcularPerimetro().ToString();
+                    }
+                    break;
+                case "Triângulo":
+
                 default:
                     break;
             }

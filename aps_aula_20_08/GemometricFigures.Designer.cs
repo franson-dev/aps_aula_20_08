@@ -231,7 +231,7 @@ namespace aps_aula_20_08
             this.cmbForma.FormattingEnabled = true;
             this.cmbForma.Items.AddRange(new object[] {
             "Quadrado",
-            "Circunferência",
+            "Circulo",
             "Retângulo",
             "Triângulo"});
             this.cmbForma.Location = new System.Drawing.Point(87, 21);

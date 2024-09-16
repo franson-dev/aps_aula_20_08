@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace aps_aula_20_08
 {
@@ -10,6 +6,12 @@ namespace aps_aula_20_08
     {
         private double _base;
         private double altura;
+
+        public Retangulo(double _base, double altura) 
+        { 
+            this._base = _base;
+            this.altura = altura;
+        }
 
         public override double CalcularArea()
         {
@@ -21,5 +23,9 @@ namespace aps_aula_20_08
             return (_base * 2) + (altura * 2);
         }
 
+        public override string ToString()
+        {
+            return $"Retângulo ({_base}x{altura})";
+        }
     }
 }
