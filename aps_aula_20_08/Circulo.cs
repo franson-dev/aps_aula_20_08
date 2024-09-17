@@ -15,12 +15,12 @@ namespace aps_aula_20_08
 
         public override double CalcularArea()
         {
-            return Math.PI * Math.Pow(raio, 2);
+            return Math.Round(Math.PI * Math.Pow(raio, 2) , 3);
         }
 
         public override double CalcularPerimetro()
         {
-            return 2 * Math.PI * raio;
+            return Math.Round(2 * Math.PI * raio , 3);
         }
 
         public override string ToString()

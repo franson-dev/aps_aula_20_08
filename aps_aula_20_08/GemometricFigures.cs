@@ -12,6 +12,7 @@ namespace aps_aula_20_08
 {
     public partial class Figures : Form
     {
+        List<FormaGeometrica> ListaPoligonos = new List<FormaGeometrica>();
         public Figures()
         {
             InitializeComponent();
@@ -24,21 +25,15 @@ namespace aps_aula_20_08
             ExibirArea(false);
             ExibirPerimetro(false);
             ExibirCriar(false);
+            ExibirRemover(false);
+            ExibirLimpar(false);
         }
 
-        private void lblRaio_Click(object sender, EventArgs e)
+        private void CmbForma_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void cmbObjetos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbForma_SelectedIndexChanged(object sender, EventArgs e)
-        {
+            ReiniciarCampos();
             
+
 
             switch (cmbForma.Text)
             {
@@ -51,6 +46,8 @@ namespace aps_aula_20_08
                     ExibirLado(false);
                     ExibirAltura(false);
                     ExibirTriangulo(false);
+                    ExibirRemover(true);
+                    ExibirLimpar(true);
                     break;
                 case "Triângulo":
                     ExibirBase(true);
@@ -61,6 +58,8 @@ namespace aps_aula_20_08
                     ExibirCriar(true);
                     ExibirLado(false);
                     ExibirRaio(false);
+                    ExibirRemover(true);
+                    ExibirLimpar(true);
                     break;
                 case "Retângulo":
                     ExibirBase(true);
@@ -71,6 +70,9 @@ namespace aps_aula_20_08
                     ExibirLado(false);
                     ExibirRaio(false);
                     ExibirTriangulo(false);
+                    ExibirRemover(true);
+                    ExibirLimpar(true);
+                    ReiniciarAltura();
                     break;
                 case "Quadrado":
                     ExibirLado(true);
@@ -81,16 +83,41 @@ namespace aps_aula_20_08
                     ExibirBase(false);
                     ExibirAltura(false);
                     ExibirTriangulo(false);
+                    ExibirRemover(true);
+                    ExibirLimpar(true);
                     break;
                 default:
                     break;
             }
-           
+
+        }
+
+        private void ReiniciarCampos()
+        {
+            tbAltura.Text = "";
+            tbBase.Text = "";
+            tbRaio.Text = "";
+            tbLado.Text = "";
+        }
+
+        private void ReiniciarAltura()
+        {
+            tbAltura.Enabled = true;
+            tbAltura.BackColor = Color.White;
+        }
+
+        private void ExibirLimpar(bool visivel)
+        {
+            LimparBotao.Visible = visivel;
+        }
+        private void ExibirRemover(bool visivel)
+        {
+            RemoverBotao.Visible = visivel;
         }
 
         private void ExibirCriar(bool visivel)
         {
-            cmbObjetos.Visible = btnCriar.Visible = visivel;
+            listObjetos.Visible = btnCriar.Visible = visivel;
         }
 
         private void ExibirPerimetro(bool visivel)
@@ -129,87 +156,151 @@ namespace aps_aula_20_08
             lblRaio.Visible = tbRaio.Visible = visivel;
         }
 
-        private void btnCriar_Click(object sender, EventArgs e)
+        private void BtnCriar_Click(object sender, EventArgs e)
         {
-            switch(cmbForma.Text)
+            try
             {
-                case "Quadrado":
-                    if (tbLado.Text != "")
-                    {
-                        FormaGeometrica quadrado = new Quadrado() { Lado = Convert.ToDouble(tbLado.Text) };
-                        cmbObjetos.Items.Add(quadrado);
-                        tbLado.Clear();
-                        tbArea.Text = quadrado.CalcularArea().ToString();
-                        tbPerimetro.Text = quadrado.CalcularPerimetro().ToString();
-                    }
-                    break;
-                case "Retângulo":
-                    if (tbAltura.Text != "" && tbBase.Text != "")
-                    {
-                        FormaGeometrica retangulo = new Retangulo(Convert.ToDouble(tbBase.Text),Convert.ToDouble(tbAltura.Text));
-                        cmbObjetos.Items.Add(retangulo);
-                        tbBase.Clear();
-                        tbAltura.Clear();
-                        tbArea.Text = retangulo.CalcularArea().ToString();
-                        tbPerimetro.Text = retangulo.CalcularPerimetro().ToString();
-                    }
-                    break;
-                case "Circulo":
-                    if (tbRaio.Text != "")
-                    {
-                        FormaGeometrica circulo = new Circulo() { Raio = Convert.ToDouble(tbRaio.Text)};
-                        cmbObjetos.Items.Add(circulo);
-                        tbRaio.Clear();
-                        tbArea.Text = circulo.CalcularArea().ToString();
-                        tbPerimetro.Text = circulo.CalcularPerimetro().ToString();
-                    }
-                    break;
-                case "Triângulo":
-                    switch (cmbTriangulo.Text)
-                    {
-                        case "Isósceles":
-                            break;
-                        case "Equilátero":
-                            break;
-                        case "Retângulo":
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-                default:
-                    break;
+                switch (cmbForma.Text)
+                {
+                    case "Quadrado":
+                        if (tbLado.Text != "" && double.Parse(tbLado.Text) > 0)
+                        {
+                            FormaGeometrica quadrado = new Quadrado() { Lado = Convert.ToDouble(tbLado.Text) };
+                            listObjetos.Items.Add(quadrado);
+                            ListaPoligonos.Add(quadrado);
+                            tbArea.Text = quadrado.CalcularArea().ToString();
+                            tbPerimetro.Text = quadrado.CalcularPerimetro().ToString();
+                            tbLado.Clear();
+                        }
+                        break;
+                    case "Retângulo":
+                        if (tbAltura.Text != "" && tbBase.Text != "" && double.Parse(tbBase.Text) > 0 && double.Parse(tbAltura.Text) > 0)
+                        {
+                            FormaGeometrica retangulo = new Retangulo(Convert.ToDouble(tbBase.Text), Convert.ToDouble(tbAltura.Text));
+                            listObjetos.Items.Add(retangulo);
+                            ListaPoligonos.Add(retangulo);
+                            tbArea.Text = retangulo.CalcularArea().ToString();
+                            tbPerimetro.Text = retangulo.CalcularPerimetro().ToString();
+                            tbAltura.Clear();
+                            tbBase.Clear();
+                        }
+                        break;
+                    case "Circulo":
+                        if (tbRaio.Text != "" && double.Parse(tbRaio.Text) > 0)
+                        {
+                            FormaGeometrica circulo = new Circulo() { Raio = Convert.ToDouble(tbRaio.Text) };
+                            listObjetos.Items.Add(circulo);
+                            ListaPoligonos.Add(circulo);
+                            tbArea.Text = circulo.CalcularArea().ToString();
+                            tbPerimetro.Text = circulo.CalcularPerimetro().ToString();
+                            tbRaio.Clear();
+                        }
+                        break;
+                    case "Triângulo":
+                        switch (cmbTriangulo.Text)
+                        {
+                            case "Isósceles":
+                                if (tbAltura.Text != "" && tbBase.Text != "" && double.Parse(tbBase.Text) > 0 && double.Parse(tbAltura.Text) > 0)
+                                {
+                                    Triangulo triIsosceles = new TrianguloIsosceles(double.Parse(tbBase.Text), double.Parse(tbAltura.Text));
+                                    listObjetos.Items.Add(triIsosceles);
+                                    tbArea.Text = triIsosceles.CalcularArea().ToString();
+                                    tbPerimetro.Text = triIsosceles.CalcularPerimetro().ToString();
+                                    tbBase.Clear();
+                                    tbAltura.Clear();
+
+                                }
+                                break;
+                            case "Equilátero":
+                                if (tbBase.Text != "" && double.Parse(tbBase.Text) > 0)
+                                {
+                                    Triangulo triEquilatero = new TrianguloEquilatero(double.Parse(tbBase.Text));
+                                    listObjetos.Items.Add(triEquilatero);
+                                    ListaPoligonos.Add(triEquilatero);
+                                    tbArea.Text = triEquilatero.CalcularArea().ToString();
+                                    tbPerimetro.Text = triEquilatero.CalcularPerimetro().ToString();
+                                    tbAltura.Text = triEquilatero.CalcularHipotenusa().ToString();
+                                    tbBase.Clear();
+                                }
+                                break;
+                            case "Retângulo":
+                                if (tbAltura.Text != "" && tbBase.Text != "" && double.Parse(tbBase.Text) > 0 && double.Parse(tbAltura.Text) > 0)
+                                {
+                                    Triangulo triRetangulo = new TrianguloRetangulo(double.Parse(tbBase.Text), double.Parse(tbAltura.Text));
+                                    listObjetos.Items.Add(triRetangulo);
+                                    ListaPoligonos.Add(triRetangulo);
+                                    tbArea.Text = triRetangulo.CalcularArea().ToString();
+                                    tbPerimetro.Text = triRetangulo.CalcularPerimetro().ToString();
+                                    tbBase.Clear();
+                                    tbAltura.Clear();
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            } catch (FormatException)
+            { 
+                MessageBox.Show("Valor não aceito!");
+                ReiniciarCampos();
+            };
+        }
+
+        private void cmbTriangulo_TextChanged(object sender, EventArgs e)
+        {
+            if (cmbTriangulo.Text == "Equilátero" && tbAltura.Enabled)
+            {
+                tbAltura.Enabled = false;
+                tbAltura.BackColor = Color.Silver;
+                tbAltura.Text = "";
+            }
+            else
+            {
+                tbAltura.Enabled = true;
+                tbAltura.BackColor = Color.White;
+                tbAltura.Text = "";
             }
         }
 
-        private void tbArea_TextChanged(object sender, EventArgs e)
+        private void CalcularNovamente(object sender, EventArgs e)
         {
-
+            if (listObjetos.SelectedIndex != -1)
+            {
+                FormaGeometrica poligonoSelecionado = ListaPoligonos[listObjetos.SelectedIndex];
+                tbArea.Text = poligonoSelecionado.CalcularArea().ToString();
+                tbPerimetro.Text = poligonoSelecionado.CalcularPerimetro().ToString();
+            }
         }
 
-        private void tbAltura_TextChanged(object sender, EventArgs e)
+        private void LimparBotao_Click(object sender, EventArgs e)
         {
-
+            tbArea.Clear();
+            tbPerimetro.Clear();
+            tbAltura.Clear();
+            tbBase.Clear();
+            tbRaio.Clear();
+            tbLado.Clear();
         }
 
-        private void lblAltura_Click(object sender, EventArgs e)
+        private void RemoverBotao_Click(object sender, EventArgs e)
         {
+            if (listObjetos.SelectedIndex >= 0)
+            {
+                int selectedIndex = listObjetos.SelectedIndex;
 
-        }
+                listObjetos.Items.RemoveAt(selectedIndex);
+                ListaPoligonos.RemoveAt(selectedIndex);
 
-        private void lblBase_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbTriangulo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+                tbArea.Clear();
+                tbPerimetro.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um item para remover.");
+            }
         }
     }
 }

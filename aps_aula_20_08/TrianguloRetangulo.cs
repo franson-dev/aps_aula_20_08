@@ -30,17 +30,22 @@ namespace aps_aula_20_08
 
         public override double CalcularArea()
         {
-            return (_base * altura) / 2;
+            return Math.Round(_base * altura / 2, 3);
         }
 
         public override double CalcularHipotenusa()
         {
-            return Math.Sqrt(Math.Pow(altura, 2) + Math.Pow(_base, 2));
+            return Math.Round(Math.Sqrt(Math.Pow(altura, 2) + Math.Pow(_base, 2)), 3);
         }
 
         public override double CalcularPerimetro()
         {
-            return _base + altura + CalcularHipotenusa();
+            return Math.Round(_base + altura + CalcularHipotenusa(), 3);
+        }
+
+        public override string ToString()
+        {
+            return $"Triângulo Retângulo ({_base} x {altura})";
         }
     }
 }

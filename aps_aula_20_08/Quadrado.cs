@@ -14,12 +14,12 @@ namespace aps_aula_20_08
 
         public override double CalcularArea()
         {
-            return Math.Pow(lado, 2);
+            return Math.Round(Math.Pow(lado, 2) , 3);
         }
 
         public override double CalcularPerimetro()
         {
-            return lado * 4;
+            return Math.Round(lado * 4 , 3);
         }
         public override string ToString()
         {

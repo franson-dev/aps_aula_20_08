@@ -46,8 +46,10 @@ namespace aps_aula_20_08
             this.lblArea = new System.Windows.Forms.Label();
             this.cmbForma = new System.Windows.Forms.ComboBox();
             this.cmbTriangulo = new System.Windows.Forms.ComboBox();
-            this.cmbObjetos = new System.Windows.Forms.ComboBox();
             this.btnCriar = new System.Windows.Forms.Button();
+            this.listObjetos = new System.Windows.Forms.ListBox();
+            this.LimparBotao = new System.Windows.Forms.Button();
+            this.RemoverBotao = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblForma
@@ -88,7 +90,6 @@ namespace aps_aula_20_08
             this.lblRaio.Size = new System.Drawing.Size(52, 22);
             this.lblRaio.TabIndex = 2;
             this.lblRaio.Text = "Raio";
-            this.lblRaio.Click += new System.EventHandler(this.lblRaio_Click);
             // 
             // lblLado
             // 
@@ -96,7 +97,7 @@ namespace aps_aula_20_08
             this.lblLado.BackColor = System.Drawing.Color.Transparent;
             this.lblLado.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblLado.Location = new System.Drawing.Point(40, 110);
+            this.lblLado.Location = new System.Drawing.Point(40, 77);
             this.lblLado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLado.Name = "lblLado";
             this.lblLado.Size = new System.Drawing.Size(56, 22);
@@ -109,13 +110,12 @@ namespace aps_aula_20_08
             this.lblAltura.BackColor = System.Drawing.Color.Transparent;
             this.lblAltura.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAltura.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblAltura.Location = new System.Drawing.Point(27, 143);
+            this.lblAltura.Location = new System.Drawing.Point(27, 77);
             this.lblAltura.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAltura.Name = "lblAltura";
             this.lblAltura.Size = new System.Drawing.Size(69, 22);
             this.lblAltura.TabIndex = 4;
             this.lblAltura.Text = "Altura";
-            this.lblAltura.Click += new System.EventHandler(this.lblAltura_Click);
             // 
             // lblBase
             // 
@@ -123,13 +123,12 @@ namespace aps_aula_20_08
             this.lblBase.BackColor = System.Drawing.Color.Transparent;
             this.lblBase.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBase.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblBase.Location = new System.Drawing.Point(44, 176);
+            this.lblBase.Location = new System.Drawing.Point(44, 110);
             this.lblBase.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBase.Name = "lblBase";
             this.lblBase.Size = new System.Drawing.Size(52, 22);
             this.lblBase.TabIndex = 5;
             this.lblBase.Text = "Base";
-            this.lblBase.Click += new System.EventHandler(this.lblBase_Click);
             // 
             // tbRaio
             // 
@@ -145,7 +144,7 @@ namespace aps_aula_20_08
             // 
             this.tbLado.BackColor = System.Drawing.Color.White;
             this.tbLado.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLado.Location = new System.Drawing.Point(100, 107);
+            this.tbLado.Location = new System.Drawing.Point(100, 74);
             this.tbLado.Margin = new System.Windows.Forms.Padding(2);
             this.tbLado.Name = "tbLado";
             this.tbLado.Size = new System.Drawing.Size(148, 29);
@@ -155,18 +154,17 @@ namespace aps_aula_20_08
             // 
             this.tbAltura.BackColor = System.Drawing.Color.White;
             this.tbAltura.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAltura.Location = new System.Drawing.Point(100, 140);
+            this.tbAltura.Location = new System.Drawing.Point(100, 74);
             this.tbAltura.Margin = new System.Windows.Forms.Padding(2);
             this.tbAltura.Name = "tbAltura";
             this.tbAltura.Size = new System.Drawing.Size(148, 29);
             this.tbAltura.TabIndex = 8;
-            this.tbAltura.TextChanged += new System.EventHandler(this.tbAltura_TextChanged);
             // 
             // tbBase
             // 
             this.tbBase.BackColor = System.Drawing.Color.White;
             this.tbBase.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbBase.Location = new System.Drawing.Point(100, 173);
+            this.tbBase.Location = new System.Drawing.Point(100, 107);
             this.tbBase.Margin = new System.Windows.Forms.Padding(2);
             this.tbBase.Name = "tbBase";
             this.tbBase.Size = new System.Drawing.Size(148, 29);
@@ -193,7 +191,6 @@ namespace aps_aula_20_08
             this.tbArea.ReadOnly = true;
             this.tbArea.Size = new System.Drawing.Size(148, 29);
             this.tbArea.TabIndex = 12;
-            this.tbArea.TextChanged += new System.EventHandler(this.tbArea_TextChanged);
             // 
             // lblPerimetro
             // 
@@ -224,6 +221,7 @@ namespace aps_aula_20_08
             // cmbForma
             // 
             this.cmbForma.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbForma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbForma.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbForma.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.cmbForma.FormattingEnabled = true;
@@ -237,10 +235,11 @@ namespace aps_aula_20_08
             this.cmbForma.Name = "cmbForma";
             this.cmbForma.Size = new System.Drawing.Size(148, 30);
             this.cmbForma.TabIndex = 14;
-            this.cmbForma.SelectedIndexChanged += new System.EventHandler(this.cmbForma_SelectedIndexChanged);
+            this.cmbForma.SelectedIndexChanged += new System.EventHandler(this.CmbForma_SelectedIndexChanged);
             // 
             // cmbTriangulo
             // 
+            this.cmbTriangulo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTriangulo.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTriangulo.FormattingEnabled = true;
             this.cmbTriangulo.Items.AddRange(new object[] {
@@ -252,18 +251,7 @@ namespace aps_aula_20_08
             this.cmbTriangulo.Name = "cmbTriangulo";
             this.cmbTriangulo.Size = new System.Drawing.Size(148, 30);
             this.cmbTriangulo.TabIndex = 15;
-            this.cmbTriangulo.SelectedIndexChanged += new System.EventHandler(this.cmbTriangulo_SelectedIndexChanged);
-            // 
-            // cmbObjetos
-            // 
-            this.cmbObjetos.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbObjetos.FormattingEnabled = true;
-            this.cmbObjetos.Location = new System.Drawing.Point(533, 21);
-            this.cmbObjetos.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbObjetos.Name = "cmbObjetos";
-            this.cmbObjetos.Size = new System.Drawing.Size(191, 30);
-            this.cmbObjetos.TabIndex = 16;
-            this.cmbObjetos.SelectedIndexChanged += new System.EventHandler(this.cmbObjetos_SelectedIndexChanged);
+            this.cmbTriangulo.TextChanged += new System.EventHandler(this.cmbTriangulo_TextChanged);
             // 
             // btnCriar
             // 
@@ -272,23 +260,68 @@ namespace aps_aula_20_08
             this.btnCriar.FlatAppearance.BorderSize = 100;
             this.btnCriar.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCriar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCriar.Location = new System.Drawing.Point(599, 68);
+            this.btnCriar.Location = new System.Drawing.Point(136, 143);
             this.btnCriar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCriar.Name = "btnCriar";
             this.btnCriar.Size = new System.Drawing.Size(70, 35);
             this.btnCriar.TabIndex = 17;
             this.btnCriar.Text = "Criar";
             this.btnCriar.UseVisualStyleBackColor = false;
-            this.btnCriar.Click += new System.EventHandler(this.btnCriar_Click);
+            this.btnCriar.Click += new System.EventHandler(this.BtnCriar_Click);
+            // 
+            // listObjetos
+            // 
+            this.listObjetos.Cursor = System.Windows.Forms.Cursors.Default;
+            this.listObjetos.FormattingEnabled = true;
+            this.listObjetos.ItemHeight = 14;
+            this.listObjetos.Location = new System.Drawing.Point(532, 20);
+            this.listObjetos.Name = "listObjetos";
+            this.listObjetos.Size = new System.Drawing.Size(332, 158);
+            this.listObjetos.TabIndex = 18;
+            this.listObjetos.SelectedIndexChanged += new System.EventHandler(this.CalcularNovamente);
+            // 
+            // LimparBotao
+            // 
+            this.LimparBotao.BackColor = System.Drawing.Color.Transparent;
+            this.LimparBotao.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.LimparBotao.FlatAppearance.BorderSize = 100;
+            this.LimparBotao.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LimparBotao.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.LimparBotao.Location = new System.Drawing.Point(397, 143);
+            this.LimparBotao.Margin = new System.Windows.Forms.Padding(2);
+            this.LimparBotao.Name = "LimparBotao";
+            this.LimparBotao.Size = new System.Drawing.Size(95, 35);
+            this.LimparBotao.TabIndex = 19;
+            this.LimparBotao.Text = "Limpar";
+            this.LimparBotao.UseVisualStyleBackColor = false;
+            this.LimparBotao.Click += new System.EventHandler(this.LimparBotao_Click);
+            // 
+            // RemoverBotao
+            // 
+            this.RemoverBotao.BackColor = System.Drawing.Color.Transparent;
+            this.RemoverBotao.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.RemoverBotao.FlatAppearance.BorderSize = 100;
+            this.RemoverBotao.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RemoverBotao.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.RemoverBotao.Location = new System.Drawing.Point(869, 77);
+            this.RemoverBotao.Margin = new System.Windows.Forms.Padding(2);
+            this.RemoverBotao.Name = "RemoverBotao";
+            this.RemoverBotao.Size = new System.Drawing.Size(97, 35);
+            this.RemoverBotao.TabIndex = 20;
+            this.RemoverBotao.Text = "Remover";
+            this.RemoverBotao.UseVisualStyleBackColor = false;
+            this.RemoverBotao.Click += new System.EventHandler(this.RemoverBotao_Click);
             // 
             // Figures
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(741, 219);
+            this.ClientSize = new System.Drawing.Size(977, 196);
+            this.Controls.Add(this.RemoverBotao);
+            this.Controls.Add(this.LimparBotao);
+            this.Controls.Add(this.listObjetos);
             this.Controls.Add(this.btnCriar);
-            this.Controls.Add(this.cmbObjetos);
             this.Controls.Add(this.cmbTriangulo);
             this.Controls.Add(this.cmbForma);
             this.Controls.Add(this.tbPerimetro);
@@ -310,7 +343,6 @@ namespace aps_aula_20_08
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Figures";
             this.Text = "Germetric Figures";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,8 +366,10 @@ namespace aps_aula_20_08
         private System.Windows.Forms.Label lblArea;
         private System.Windows.Forms.ComboBox cmbForma;
         private System.Windows.Forms.ComboBox cmbTriangulo;
-        private System.Windows.Forms.ComboBox cmbObjetos;
         private System.Windows.Forms.Button btnCriar;
+        private System.Windows.Forms.ListBox listObjetos;
+        private System.Windows.Forms.Button LimparBotao;
+        private System.Windows.Forms.Button RemoverBotao;
     }
 }
 
