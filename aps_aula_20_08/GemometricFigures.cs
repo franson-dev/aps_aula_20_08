@@ -81,6 +81,7 @@ namespace aps_aula_20_08
                     ExibirBase(false);
                     ExibirAltura(false);
                     ExibirTriangulo(false);
+
                     break;
                 default:
                     break;

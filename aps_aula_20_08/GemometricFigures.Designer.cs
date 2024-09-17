@@ -29,7 +29,6 @@ namespace aps_aula_20_08
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Figures));
             this.lblForma = new System.Windows.Forms.Label();
             this.lblTriangulo = new System.Windows.Forms.Label();
@@ -49,7 +48,6 @@ namespace aps_aula_20_08
             this.cmbTriangulo = new System.Windows.Forms.ComboBox();
             this.cmbObjetos = new System.Windows.Forms.ComboBox();
             this.btnCriar = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
             // 
             // lblForma
@@ -283,12 +281,6 @@ namespace aps_aula_20_08
             this.btnCriar.UseVisualStyleBackColor = false;
             this.btnCriar.Click += new System.EventHandler(this.btnCriar_Click);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // Figures
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -344,7 +336,6 @@ namespace aps_aula_20_08
         private System.Windows.Forms.ComboBox cmbTriangulo;
         private System.Windows.Forms.ComboBox cmbObjetos;
         private System.Windows.Forms.Button btnCriar;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 
