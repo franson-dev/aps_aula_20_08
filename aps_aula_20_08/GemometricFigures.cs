@@ -166,7 +166,18 @@ namespace aps_aula_20_08
                     }
                     break;
                 case "Triângulo":
-
+                    switch (cmbTriangulo.Text)
+                    {
+                        case "Isósceles":
+                            break;
+                        case "Equilátero":
+                            break;
+                        case "Retângulo":
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
                 default:
                     break;
             }

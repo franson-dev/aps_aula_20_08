@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Circulo.cs" />
+    <Compile Include="TrianguloEquilatero.cs" />
+    <Compile Include="TrianguloRetangulo.cs" />
+    <Compile Include="TrianguloIsosceles.cs" />
     <Compile Include="GemometricFigures.cs">
       <SubType>Form</SubType>
     </Compile>
